@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dicey McDiceface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Alata&display=swap" rel="stylesheet">
+    <style>
+      .game{
+        background: #F7F7FF;
+      }
+      .jumbotron {
+        font-family: 'Alata', sans-serif;
+        text-shadow: #000 2px 1px 4px;
+        color: #fff;
+        background: #000 url('https://images.unsplash.com/photo-1505855788694-023053764ae5') no-repeat center 10%;
+        background-size: cover;
+      }
+      .actions .btn {
+        font-family: 'Alata', sans-serif;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .actions .btn {
+        width: 49%;
+      }
+      .actions .btn-primary:hover {
+        border: #0062cc 2px solid;
+        box-shadow: #0069d9 0px 4px 9px;
+        transition: 200ms ease;
+        -webkit-transition: 200ms ease;
+      }
+      .actions .btn-primary:focus {
+        background-color: #0062cc;
+        border-color: #0062cc;
+        box-shadow: none;
+      }
+      .actions .btn-danger:hover {
+        border: #bd2938 2px solid;
+        box-shadow: #bd2938 0px 4px 9px;
+        transition: 200ms ease;
+        -webkit-transition: 200ms ease;
+      }
+      .actions .btn-danger:focus {
+        background-color: #bd2130;
+        border-color: #bd2130;
+        box-shadow: none;
+      }
+      .dice {
+        float: left;
+        width: 80px;
+        background: #fff;
+        border: #ccc 1px solid;
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+        margin: 5px;
+        box-shadow: #ccc 0px 0px 4px;
+        border-radius: 4px;
+      }
+      .footer {
+        font-family: 'Arial', sans-serif;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 45px;
+      }
+    </style>
+    <script>
+      function diceRoll() {
+        var die1 = document.getElementById("die1");
+        var die2 = document.getElementById("die2");
+        var status = document.getElementById("status");
+        var d1 = Math.floor(Math.random() * 6) + 1;
+        var d2 = Math.floor(Math.random() * 6) + 1;
+        die1.innerHTML = d1;
+        die2.innerHTML = d2;
+      }
+    </script>
+    <script>
+      function resetDice() {
+        var die1 = document.getElementById("die1");
+        var die2 = document.getElementById("die2");
+        var d1 = Math.floor(Math.random() * 0) ;
+        var d2 = Math.floor(Math.random() * 0) ;
+        die1.innerHTML = d1;
+        die2.innerHTML = d2;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid game">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Dicey McDiceface</h1>
+          <p class="lead">This is a poorly crafted javascript dice rolling game. Play at your own risk!</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-8 actions">
+          <button class="btn btn-primary" onclick="diceRoll()">Roll Dice</button>
+          <button class="btn btn-danger" onclick="resetDice()">Reset Dice</button>
+        </div>
+        <div class="col-6 col-md-4">
+          <div id="die1" class="dice">0</div>
+          <div id="die2" class="dice">0</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer">
+            <hr>
+            <h4>This is a sample bit of code. &copy; 2019.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
